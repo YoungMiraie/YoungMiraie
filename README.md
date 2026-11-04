@@ -1,7 +1,3 @@
-<p>
-  <img src="./assets/header-lvx-logo.jpg" alt="LVX Digital — logo e retrato de Diogo" width="100%">
-</p>
-
 # Hey, I'm Diogo.
 
 I build software, connect systems and explore what I can do with AI.
