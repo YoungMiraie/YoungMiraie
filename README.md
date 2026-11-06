@@ -1,10 +1,6 @@
 # Hey, I'm Diogo.
 
-I build software, connect systems and explore what I can do with AI.
-
-I like understanding how things work and finding ways to make them work better. Sometimes that means building an application. Sometimes it's connecting two tools, automating a repetitive task or trying an idea to see where it leads.
-
-Most of my work sits somewhere between **software engineering, automation and applied AI**. I enjoy going from a messy problem to something I can build, test and improve.
+I'm Diogo Stein, Head of Tech at LVX Digital. I build software that gives LLM agents a defined set of actions. I built Kontar, a CRM where the model proposes changes and the backend checks which record it can touch and whether the action is allowed. I'm preparing a lesson that uses a fictional CRM workflow to separate tests for authorization and idempotency from evaluations of the model's tool choice.
 
 ### What keeps me curious
 
@@ -22,7 +18,7 @@ Some examples from my work at LVX Digital:
 | --- | --- | --- |
 | [**Polaris**](./work/polaris.md) | Internal platform for client operations, projects, communication and finance. | React · JavaScript · Firebase · Cloud Functions |
 | [**Kontar**](./work/kontar.md) | Commercial CRM with conversations, pipelines, integrations and AI agents. | TypeScript · Next.js · NestJS · PostgreSQL · Prisma · Redis · BullMQ |
-| [**LVX Central**](./work/lvx-central.md) | Local Windows application for daily operations, engineering and agent workflows. **In local validation.** | Electron · React · TypeScript · SQLite |
+| [**LVX Central**](./work/lvx-central.md) | Local Windows application for daily operations, engineering and agent workflows. **Archived prototype.** | Electron · React · TypeScript · SQLite |
 
 These are internal projects. The linked overviews describe the engineering at a high level; their source code and operational data remain private.
 
