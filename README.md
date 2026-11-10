@@ -1,38 +1,48 @@
-# Hey, I'm Diogo.
+<img src="assets/banner.svg" alt="Diogo Stein. I build LLM agents for business software." width="100%">
 
-I'm Diogo Stein, Head of Tech at LVX Digital. I build software that gives LLM agents a defined set of actions. I built Kontar, a CRM where the model proposes changes and the backend checks which record it can touch and whether the action is allowed. I'm preparing a lesson that uses a fictional CRM workflow to separate tests for authorization and idempotency from evaluations of the model's tool choice.
+<p align="center">
+  <a href="https://www.linkedin.com/in/diogo-stein-ab83b122b/"><b>LinkedIn</b></a>
+  &nbsp;·&nbsp;
+  <a href="#how-i-put-an-llm-inside-a-product"><b>How I build</b></a>
+  &nbsp;·&nbsp;
+  <a href="#selected-work"><b>Selected work</b></a>
+</p>
 
-### What keeps me curious
+Hey, I'm Diogo, Head of Tech at **LVX Digital** in Brazil. I design business software and decide where a language model actually helps. The model reads the conversation and proposes; the software checks the rules and decides; a person steps in when it matters.
 
-- Building tools that are useful in everyday work.
-- Connecting APIs, data and applications.
-- Exploring AI agents and how they fit into real workflows.
-- Turning a manual process into something simpler.
-- Learning a technology by making something with it.
+- 🛠️ Building **Kontar**, a CRM with AI agents that act through scoped tools
+- 🧪 Writing a lesson on testing agent tools: rules in tests, model choices in evals
+- 🤖 Shipping code with coding agents, one ticket per branch, reviewed before merge
 
-### Things I've been building
+## Selected work
 
-Some examples from my work at LVX Digital:
+<a href="./work/kontar.md"><img src="assets/card-kontar.svg" alt="Kontar: a commercial CRM where the model proposes changes and the backend decides what is allowed." width="100%"></a>
 
-| Project | What I've been working on | Built with |
-| --- | --- | --- |
-| [**Polaris**](./work/polaris.md) | Internal platform for client operations, projects, communication and finance. | React · JavaScript · Firebase · Cloud Functions |
-| [**Kontar**](./work/kontar.md) | Commercial CRM with conversations, pipelines, integrations and AI agents. | TypeScript · Next.js · NestJS · PostgreSQL · Prisma · Redis · BullMQ |
-| [**LVX Central**](./work/lvx-central.md) | Local Windows application for daily operations, engineering and agent workflows. **Archived prototype.** | Electron · React · TypeScript · SQLite |
+<a href="./work/polaris.md"><img src="assets/card-polaris.svg" alt="Polaris: internal platform for client operations, projects, communication and finance." width="49%"></a>&nbsp;<a href="./work/lvx-central.md"><img src="assets/card-lvx-central.svg" alt="LVX Central: archived local desktop app for daily operations and coding agent workflows." width="49%"></a>
 
-These are internal projects. The linked overviews describe the engineering at a high level; their source code and operational data remain private.
+> 🔒 These are private systems. The overviews explain the engineering decisions; source code and client data stay private.
 
-### My toolbox
+## How I put an LLM inside a product
 
-- **Frontend:** React, Next.js, Vite, Tailwind CSS
-- **Backend and data:** Node.js, NestJS, PostgreSQL, Prisma, Firebase, Redis, BullMQ
-- **AI and automation:** OpenAI API, Codex, Claude Code, Make, webhooks
-- **Infrastructure and delivery:** Docker, Linux, Git, GitHub, Firebase Hosting, Vercel, WordPress
+```mermaid
+flowchart LR
+    U(["Customer message"]) --> M["Model reads the conversation"]
+    M -->|"proposes a tool call"| B{"Backend checks record,<br/>organization and allowed values"}
+    B -->|"valid"| W["Write + audit log"]
+    B -->|"out of scope"| R["Refuse"]
+    M -->|"asks for a human"| H["Pause the AI,<br/>route to the team"]
+```
 
-### A little more context
+1. **Scope the action.** The model gets a small set of named tools, never the database.
+2. **Validate in the backend.** Every proposal is checked against the record, the organization and the allowed values before anything is written. Repeated calls don't repeat the effect.
+3. **Hand off to a person.** A separate path pauses the AI and gives the conversation to the team.
+4. **Verify the behavior.** Tests prove the rules. Evals measure the model's choices. I keep the two apart.
 
-I'm based in Brazil and currently work as **Head of Technology at LVX Digital**. My background in marketing operations shapes the way I approach technical problems: I want to understand the people and the process before deciding what to build.
+## Toolbox
 
-I'm always interested in exchanging ideas with people building software, experimenting with AI or working through an interesting technical problem.
+**AI** &nbsp;`OpenAI API` `tool calling` `agents` `evals` `Claude Code` `Codex`<br>
+**Backend** &nbsp;`TypeScript` `Node.js` `NestJS` `PostgreSQL` `Prisma` `Redis` `BullMQ`<br>
+**Frontend** &nbsp;`React` `Next.js` `Vite` `Tailwind CSS`<br>
+**Delivery** &nbsp;`Docker` `Linux` `GitHub` `Vercel` `Firebase`
 
-[Connect on LinkedIn](https://www.linkedin.com/in/diogo-stein-ab83b122b/)
+<sub>Before tech, I worked in marketing and operations. That's why I start with the process and the people, and only then decide what to build.</sub>
